@@ -31,12 +31,12 @@ device =uinput.Device([uinput.BTN_JOYSTICK,
 
 joy_y=0 #abs_y+ value 
 joy_x=1	#abs_x+ value
-coin=2  #number key 1
-ls=3	#number key 2 
-rs=4	#number key 3
-esc=5	#number key 4
-sel=6	#number key 5
-start=7	#number key 6
+btn1=2  #number key 1
+btn2=3	#number key 2 
+btn3=4	#number key 3
+btn4=5	#number key 4
+btn5=6	#number key 5
+btn6=7	#number key 6
 
 while True:
     joy_x_value=ReadChannel(joy_x)
@@ -47,40 +47,40 @@ joy_y_value=ReadChannel(joy_y)
 #print ("Joy Y Value:{}".format(joy_y_value))
 device.emit(uinput.ABS_Y,joy_y_value)
 
-coin_value=ReadChannel(coin)
+btn1=ReadChannel(btn1)
 if coin_value==1:
-    #print ("Button Pressed {}".format(coin_value))
+    #print ("Button Pressed {}".format(btn1_value))
     device.emit_click(uinput.KEY_1,1)
 		
-ls_value=ReadChannel(ls)
+btn2_value=ReadChannel(btn2)
 if ls_value==1:
-    #print ("Button Pressed {}".format(ls_value))
+    #print ("Button Pressed {}".format(btn2_value))
     device.emit_click(uinput.KEY_2,1)
     
 	  
-rs_value=ReadChannel(rs)
+btn3_value=ReadChannel(btn3)
 if rs_value==1:
-    #print ("Button Pressed {}".format(rs_value))
+    #print ("Button Pressed {}".format(btn3_value))
     device.emit_click(uinput.KEY_3,1)
     
 		
 	  
-esc_value=ReadChannel(esc)
+btn4_value=ReadChannel(btn4)
 if esc_value==1:
-    #print ("Button Pressed {}".format(esc_value))
+    #print ("Button Pressed {}".format(btn4_value))
     device.emit_click(uinput.KEY_4,1)
    
 	  
-sel_value=ReadChannel(sel)
+btn5_value=ReadChannel(btn5)
 if sel_value==1:
     #print ("Button Pressed {}".format(sel_value))
     device.emit_click(uinput.KEY_5,1)
 
 
 	  
-start_value=ReadChannel(start)
+btn6_value=ReadChannel(btn6)
 if start_value==1:
-    #print ("Button Pressed {}".format(start_value))
+    #print ("Button Pressed {}".format(btn6_value))
     device.emit_click(uinput.KEY_6,1)
     
 time.sleep(0.020) 
